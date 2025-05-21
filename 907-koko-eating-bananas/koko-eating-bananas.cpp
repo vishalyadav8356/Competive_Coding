@@ -3,8 +3,9 @@ public:
 
     bool check(int speed, vector<int>& piles, int h){
         int n = piles.size();
-        long long count = 0;
+        int count = 0;
         for(int i=0; i<n; i++){
+            if(count>h) return false;
             if(speed >= piles[i]) count++;
             else if(piles[i]%speed == 0) count += piles[i]/speed;
             else count += piles[i]/speed+1;
